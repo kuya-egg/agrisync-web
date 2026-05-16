@@ -9,8 +9,6 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "preview:pages": "bun run build && wrangler pages dev dist",
-    "deploy:pages": "bun run build && wrangler pages deploy dist --project-name=agrisync",
     "astro": "astro"
   },
   "dependencies": {
@@ -21,8 +19,7 @@
     "motion": "^12.38.0",
     "svelte": "^5.55.7",
     "tailwindcss": "^4.3.0",
-    "typescript": "^6.0.3",
-    "wrangler": "^4.92.0"
+    "typescript": "^6.0.3"
   },
   "overrides": {
     "vite": "^7"

@@ -1157,8 +1157,4 @@ Cloudflare Pages settings:
 * Build output directory: `dist`
 * Production domain: `agrisync.online`
 
-CLI deploy:
-
-```sh
-bun run deploy:pages
-```
+Deploy from the Cloudflare dashboard using the settings above.
