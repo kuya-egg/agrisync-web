@@ -1,0 +1,40 @@
+---
+import LegalPage from '../components/LegalPage.astro';
+
+const sections = [
+  {
+    title: 'Using Agrisync',
+    body: [
+      'Agrisync provides AI-powered farming guidance, crop monitoring tools, market views, reports, and community features to support farmer decision-making.',
+      'The service is meant to assist, not replace, professional agricultural judgment, local government advisories, weather bulletins, or expert advice.',
+    ],
+  },
+  {
+    title: 'Farmer Responsibility',
+    body: [
+      'Users are responsible for checking recommendations against real farm conditions, local rules, supplier instructions, and safety practices before acting.',
+      'Market prices, weather alerts, and growth estimates may change. Agrisync cannot guarantee crop yield, profit, harvest dates, or disaster outcomes.',
+    ],
+  },
+  {
+    title: 'Acceptable Use',
+    body: [
+      'Users should not misuse the platform, attempt unauthorized access, disrupt service operation, upload harmful content, or share misleading information in community spaces.',
+      'Community contributions should be respectful, practical, and relevant to farming support.',
+    ],
+  },
+  {
+    title: 'Changes to the Service',
+    body: [
+      'Agrisync may update features, pricing, content, and these terms as the product grows. Continued use after updates means the revised terms apply.',
+    ],
+  },
+];
+---
+
+<LegalPage
+  title="Terms of Service"
+  eyebrow="Agrisync Terms"
+  description="These Terms of Service describe the basic rules for using Agrisync and its smart farming assistance features."
+  sections={sections}
+/>
