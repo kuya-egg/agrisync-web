@@ -54,6 +54,15 @@
     if (billing === 'yearly' && plan.name === 'Farmer Plus') return '₱1,490/year';
     return plan.price;
   };
+
+  const featureIllustrations: Record<string, string> = {
+    'Crop Recommendation': '/illustrations/crop-recommendation.webp',
+    'Crop Monitoring': '/illustrations/crop-monitoring.webp',
+    'Personalized Action Items': '/illustrations/action-items.webp',
+    'Market Views': '/illustrations/market-views.webp',
+    'Generated Activity Reports': '/illustrations/generated-reports.webp',
+    'Community Support': '/illustrations/community-support.webp',
+  };
 </script>
 
 <svelte:head>
@@ -231,7 +240,11 @@
                 </div>
               </div>
               <div class="feature-media grid min-w-0 place-items-center overflow-hidden rounded-[1.35rem] bg-[linear-gradient(145deg,#DDF4FF,#FFF8E9_52%,#DDEFC9)] p-4 sm:min-h-[420px] sm:rounded-[1.9rem] sm:p-6">
-                {@render PhoneMockup(feature.title, feature.label, index > 3)}
+                {#if featureIllustrations[feature.title]}
+                  <img src={featureIllustrations[feature.title]} alt={feature.label} class="h-full w-full rounded-[1.2rem] object-contain drop-shadow-[0_24px_60px_rgba(14,90,58,0.16)]" loading="lazy" />
+                {:else}
+                  {@render PhoneMockup(feature.title, feature.label, index > 3)}
+                {/if}
               </div>
             </article>
           {/each}
@@ -282,10 +295,20 @@
           {#each testimonials as item}
             <figure data-stagger-item class="rounded-[2rem] bg-[rgba(14,90,58,0.08)] p-2">
               <blockquote class="rounded-t-[1.55rem] bg-white/82 p-7 pb-0">
-                <div class="mb-6 grid size-14 place-items-center rounded-full bg-[var(--yellow)] font-display text-3xl font-black">“</div>
+                <div class="text-6xl font-display font-black text-[var(--yellow)] leading-none">“</div>
                 <p class="text-xl font-black leading-8">{item.quote}</p>
               </blockquote>
-              <figcaption class="rounded-b-[1.55rem] bg-white/82 p-7 pt-6 text-sm font-bold text-[var(--forest)]/64"><strong class="block text-[var(--forest)]">{item.name}</strong>{item.detail}</figcaption>
+              <figcaption class="rounded-b-[1.55rem] bg-white/82 p-7 pt-6 text-sm font-bold text-[var(--forest)]/64">
+                <div class="flex items-center gap-3">
+                  {#if item.image}
+                    <img src={item.image} alt={item.name} class="h-12 w-12 rounded-full object-cover" loading="lazy" />
+                  {/if}
+                  <div class="leading-tight">
+                    <strong class="block text-[var(--forest)]">{item.name}</strong>
+                    <span class="text-[var(--forest)]/64">{item.detail}</span>
+                  </div>
+                </div>
+              </figcaption>
             </figure>
           {/each}
         </div>
