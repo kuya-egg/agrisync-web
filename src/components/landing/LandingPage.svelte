@@ -54,6 +54,15 @@
     if (billing === 'yearly' && plan.name === 'Farmer Plus') return '₱1,490/year';
     return plan.price;
   };
+
+  const featureIllustrations: Record<string, string> = {
+    'Crop Recommendation': '/illustrations/crop-recommendation.webp',
+    'Crop Monitoring': '/illustrations/crop-monitoring.webp',
+    'Personalized Action Items': '/illustrations/action-items.webp',
+    'Market Views': '/illustrations/market-views.webp',
+    'Generated Activity Reports': '/illustrations/generated-reports.webp',
+    'Community Support': '/illustrations/community-support.webp',
+  };
 </script>
 
 <svelte:head>
@@ -192,15 +201,9 @@
     <section class="px-4 py-20 sm:px-6 lg:px-8">
       <div class="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[0.9fr_1fr]">
         <div data-reveal class="rounded-[2.4rem] bg-[rgba(14,90,58,0.08)] p-2">
-          <div class="relative overflow-hidden rounded-[1.9rem] bg-[linear-gradient(150deg,#DDEFC9,#FFF8E9_46%,#DDF4FF)] p-8">
-            <div class="mx-auto grid aspect-square max-w-[420px] place-items-center rounded-full bg-white/50">
-              <div class="relative grid size-64 place-items-center rounded-full bg-[var(--yellow)] shadow-[0_30px_70px_rgba(14,90,58,0.16)]">
-                <div class="absolute -top-5 size-20 rounded-full bg-[var(--leaf)]"></div>
-                <div class="z-10 grid size-44 place-items-center rounded-full bg-[var(--cream)] text-7xl shadow-[inset_0_2px_0_rgba(255,255,255,0.8)]">A</div>
-                <div class="absolute bottom-10 left-12 size-5 rounded-full bg-[var(--forest)]"></div>
-                <div class="absolute bottom-10 right-12 size-5 rounded-full bg-[var(--forest)]"></div>
-                <div class="absolute bottom-7 h-4 w-16 rounded-full border-b-4 border-[var(--forest)]"></div>
-              </div>
+          <div class="relative overflow-visible rounded-[1.9rem] bg-[linear-gradient(150deg,#DDEFC9,#FFF8E9_46%,#DDF4FF)] p-8">
+            <div class="relative mx-auto aspect-square max-w-[420px] overflow-visible rounded-full bg-white/50 px-4 pt-5 pb-0">
+              <img src="/illustrations/anie.webp" alt="Virtual Assistant Anie illustration" class="absolute left-1/2 top-[-28%] h-[132%] w-[152%] max-w-none -translate-x-1/2 object-contain drop-shadow-[0_30px_70px_rgba(14,90,58,0.16)]" loading="lazy" />
             </div>
           </div>
         </div>
@@ -237,7 +240,11 @@
                 </div>
               </div>
               <div class="feature-media grid min-w-0 place-items-center overflow-hidden rounded-[1.35rem] bg-[linear-gradient(145deg,#DDF4FF,#FFF8E9_52%,#DDEFC9)] p-4 sm:min-h-[420px] sm:rounded-[1.9rem] sm:p-6">
-                {@render PhoneMockup(feature.title, feature.label, index > 3)}
+                {#if featureIllustrations[feature.title]}
+                  <img src={featureIllustrations[feature.title]} alt={feature.label} class="h-full w-full rounded-[1.2rem] object-contain drop-shadow-[0_24px_60px_rgba(14,90,58,0.16)]" loading="lazy" />
+                {:else}
+                  {@render PhoneMockup(feature.title, feature.label, index > 3)}
+                {/if}
               </div>
             </article>
           {/each}
@@ -288,10 +295,20 @@
           {#each testimonials as item}
             <figure data-stagger-item class="rounded-[2rem] bg-[rgba(14,90,58,0.08)] p-2">
               <blockquote class="rounded-t-[1.55rem] bg-white/82 p-7 pb-0">
-                <div class="mb-6 grid size-14 place-items-center rounded-full bg-[var(--yellow)] font-display text-3xl font-black">“</div>
+                <div class="text-6xl font-display font-black text-[var(--yellow)] leading-none">“</div>
                 <p class="text-xl font-black leading-8">{item.quote}</p>
               </blockquote>
-              <figcaption class="rounded-b-[1.55rem] bg-white/82 p-7 pt-6 text-sm font-bold text-[var(--forest)]/64"><strong class="block text-[var(--forest)]">{item.name}</strong>{item.detail}</figcaption>
+              <figcaption class="rounded-b-[1.55rem] bg-white/82 p-7 pt-6 text-sm font-bold text-[var(--forest)]/64">
+                <div class="flex items-center gap-3">
+                  {#if item.image}
+                    <img src={item.image} alt={item.name} class="h-12 w-12 rounded-full object-cover" loading="lazy" />
+                  {/if}
+                  <div class="leading-tight">
+                    <strong class="block text-[var(--forest)]">{item.name}</strong>
+                    <span class="text-[var(--forest)]/64">{item.detail}</span>
+                  </div>
+                </div>
+              </figcaption>
             </figure>
           {/each}
         </div>

@@ -182,16 +182,19 @@ export const testimonials = [
     quote: 'Agrisync helped me know the right time to harvest my crops.',
     name: 'Mang Leo',
     detail: 'Vegetable farmer, Nueva Ecija',
+    image: '/illustrations/mang-leo.webp',
   },
   {
     quote: 'The market prices helped me avoid selling too low.',
     name: 'Aling Tess',
     detail: 'Rice and corn grower, Isabela',
+    image: '/illustrations/aling-tess.webp',
   },
   {
     quote: 'Anie feels like a farming partner.',
     name: 'Jun Carlo',
     detail: 'Young farmer, Laguna',
+    image: '/illustrations/jun-carlo.webp',
   },
 ];
 
