@@ -192,15 +192,9 @@
     <section class="px-4 py-20 sm:px-6 lg:px-8">
       <div class="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[0.9fr_1fr]">
         <div data-reveal class="rounded-[2.4rem] bg-[rgba(14,90,58,0.08)] p-2">
-          <div class="relative overflow-hidden rounded-[1.9rem] bg-[linear-gradient(150deg,#DDEFC9,#FFF8E9_46%,#DDF4FF)] p-8">
-            <div class="mx-auto grid aspect-square max-w-[420px] place-items-center rounded-full bg-white/50">
-              <div class="relative grid size-64 place-items-center rounded-full bg-[var(--yellow)] shadow-[0_30px_70px_rgba(14,90,58,0.16)]">
-                <div class="absolute -top-5 size-20 rounded-full bg-[var(--leaf)]"></div>
-                <div class="z-10 grid size-44 place-items-center rounded-full bg-[var(--cream)] text-7xl shadow-[inset_0_2px_0_rgba(255,255,255,0.8)]">A</div>
-                <div class="absolute bottom-10 left-12 size-5 rounded-full bg-[var(--forest)]"></div>
-                <div class="absolute bottom-10 right-12 size-5 rounded-full bg-[var(--forest)]"></div>
-                <div class="absolute bottom-7 h-4 w-16 rounded-full border-b-4 border-[var(--forest)]"></div>
-              </div>
+          <div class="relative overflow-visible rounded-[1.9rem] bg-[linear-gradient(150deg,#DDEFC9,#FFF8E9_46%,#DDF4FF)] p-8">
+            <div class="relative mx-auto aspect-square max-w-[420px] overflow-visible rounded-full bg-white/50 px-4 pt-5 pb-0">
+              <img src="/illustrations/anie.webp" alt="Virtual Assistant Anie illustration" class="absolute left-1/2 top-[-28%] h-[132%] w-[152%] max-w-none -translate-x-1/2 object-contain drop-shadow-[0_30px_70px_rgba(14,90,58,0.16)]" loading="lazy" />
             </div>
           </div>
         </div>
