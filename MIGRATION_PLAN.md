@@ -14,6 +14,7 @@ The end state should be:
 
 ## Note
 - Always use Bun and the svelte skill and typescript skills
+- Always use SSR for all pages
 
 ## Current Site Inventory
 
