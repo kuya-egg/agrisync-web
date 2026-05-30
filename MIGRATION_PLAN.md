@@ -12,6 +12,9 @@ The end state should be:
 - Content is editable from PocketBase without requiring code changes for common marketing/legal updates.
 - The contact form submits through a server-side SvelteKit action.
 
+## Note
+- Always use Bun and the svelte skill and typescript skills
+
 ## Current Site Inventory
 
 Current Astro pages:
